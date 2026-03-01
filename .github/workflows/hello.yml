@@ -6,8 +6,7 @@ on:
 jobs:
   greet:
     runs-on: ubuntu-latest
-
     steps:  
-      - name: prasad
-      - run: echo "hello $USER"
+      - name: print user
+        run: echo "hello $USER"
      
