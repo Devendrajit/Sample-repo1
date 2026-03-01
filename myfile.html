@@ -1,0 +1,251 @@
+Here is your modern **glassmorphism single-page portfolio** (`index.html`).
+It includes smooth scrolling, animated gradients, glass cards, and elegant hover effects.
+
+You can copy this into an `index.html` file and open in browser.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tejashreee Gangurde | Portfolio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(-45deg,#1d2671,#c33764,#11998e,#38ef7d);
+    background-size:400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color:#fff;
+    scroll-behavior:smooth;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter: blur(15px);
+    background:rgba(255,255,255,0.1);
+    border-bottom:1px solid rgba(255,255,255,0.2);
+    z-index:1000;
+}
+
+nav h2{
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:2px;
+    bottom:-5px;
+    left:0;
+    background:#fff;
+    transition:0.4s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+section{
+    min-height:100vh;
+    padding:120px 8% 60px 8%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.hero{
+    text-align:center;
+}
+
+.hero h1{
+    font-size:60px;
+    font-weight:700;
+}
+
+.hero span{
+    color:#ffeb3b;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:18px;
+    opacity:0.9;
+}
+
+.btn{
+    margin-top:30px;
+    padding:12px 30px;
+    border-radius:30px;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    color:#333;
+    background:white;
+    transition:0.4s ease;
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.glass-card{
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.15);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.2);
+    padding:40px;
+    margin-top:40px;
+    transition:0.4s;
+}
+
+.glass-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.skill{
+    padding:25px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.1);
+    transition:0.4s;
+    cursor:pointer;
+}
+
+.skill:hover{
+    background:rgba(255,255,255,0.25);
+    transform:scale(1.05);
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    backdrop-filter: blur(15px);
+    background:rgba(255,255,255,0.1);
+    border-top:1px solid rgba(255,255,255,0.2);
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Tejashreee</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero" id="home">
+    <h1>Hello, I'm <span>Tejashreee Gangurde</span></h1>
+    <p>Creative Professional | Tech Enthusiast | Problem Solver</p>
+    <button class="btn" onclick="scrollToSection('about')">Explore More</button>
+</section>
+
+<section id="about">
+    <div class="glass-card">
+        <h2>About Me</h2>
+        <p style="margin-top:15px; line-height:1.7;">
+            I am a passionate and driven professional based in India, focused on continuous learning 
+            and creating impactful digital experiences. I love blending creativity with technology 
+            to build modern, elegant, and user-centric solutions.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>My Expertise</h2>
+    <div class="skills-grid">
+        <div class="skill">
+            <h3>UI/UX Design</h3>
+            <p>Modern interfaces with smooth animations and intuitive layouts.</p>
+        </div>
+        <div class="skill">
+            <h3>Web Development</h3>
+            <p>Responsive, fast, and interactive single-page experiences.</p>
+        </div>
+        <div class="skill">
+            <h3>Creative Thinking</h3>
+            <p>Innovative ideas turned into visually compelling designs.</p>
+        </div>
+        <div class="skill">
+            <h3>Professional Communication</h3>
+            <p>Clear messaging and structured documentation expertise.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="glass-card">
+        <h2>Let's Connect</h2>
+        <p style="margin-top:15px;">Interested in collaborating or working together?</p>
+        <button class="btn" style="margin-top:20px;">Contact Me</button>
+    </div>
+</section>
+
+<footer>
+    © 2026 Tejashreee Gangurde | Designed with Modern Glass UI
+</footer>
+
+<script>
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
+```
